@@ -3,20 +3,30 @@
 //
 
 #include <iostream>
+
 using namespace std;
+
 int main() {
-    int idx;
-    cin >> idx;
+    int X;
+    cin>>X;
+
+    int a = 0;
     int i = 1;
-    int diff = 0;
-    for(int sum = 0; sum+i < idx; i++)
-    {
-        sum += i;
-        diff = idx - sum;
+    for(; a<X; i++){
+        a+=i;
     }
-    if(i%2 == 1)
-        cout << i-diff+1 << "/" << diff;
-    else
-        cout << diff << "/" << i-diff+1;
-    return 0;
+    i--;
+    int numerator;
+    int denominator;
+    int t = a-X;
+    if(i%2 == 1){
+        numerator = 1+t;
+        denominator = i-t;
+    }
+    else{
+        numerator = i-t;
+        denominator = 1+t;
+    }
+
+    cout<<numerator<<"/"<<denominator<<'\n';
 }
